@@ -142,6 +142,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="collider.cpp" />
+    <ClCompile Include="component.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameObject.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix4.cpp" />
+    <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="physics.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="script.cpp" />
+    <ClCompile Include="textureManager.cpp" />
+    <ClCompile Include="transform.cpp" />
+    <ClCompile Include="vector3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="collider.h" />
+    <ClInclude Include="component.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="gameObject.h" />
+    <ClInclude Include="IComponentManager.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="luaGameObject.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="matrix4.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="physics.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="script.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="textureManager.h" />
+    <ClInclude Include="transform.h" />
+    <ClInclude Include="vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
