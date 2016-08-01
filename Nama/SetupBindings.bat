@@ -1,0 +1,1 @@
+tolua++_d -o luaGameObject.h luaGameObject.pkg

@@ -1,0 +1,93 @@
+// #define THIS gameObject
+
+$#include "vector3.h"
+$#include "component.h"
+$#include "gameObject.h"
+$#include "transform.h"
+$#include "game.h"
+$#include "mesh.h"
+$#include "physics.h"
+
+
+class Input
+{
+	static inline bool GetKey( char key );
+	static inline Vector3* GetMousePosition();
+	static bool GetMouseButton( int buttonNo );
+};
+
+class Game
+{
+	static Game* GetInstance();
+	double GetDeltaTime();
+	void PrintMessage( string message );
+	void LoadScene( string sceneName );
+};
+
+class GameObject
+{
+	static GameObject* Create();
+	static void Destroy( GameObject* gameObject );
+	Transform* GetTransform();
+	Mesh* GetMesh();
+	int GetID();
+	
+	void AddCollider( float w, float h, int layerIndex );
+	void AddCamera();
+	void RemoveCollider();
+};
+
+class Transform
+{
+	Transform();
+	~Transform();
+	Vector3 getPosition();
+	Vector3 getRotation();
+	Vector3 getScale();
+	void setPosition(float x, float y, float z);
+	void setRotation(float x, float y, float z);
+	void setScale(float x, float y, float z);
+	void setPosition( Vector3 position );
+	void setRotation(Vector3 rotation);
+	void setScale(Vector3 scale);
+};
+
+class Vector3
+{
+	Vector3();
+	~Vector3();
+	Vector3(float x, float y, float z);
+	void normalize();
+	float getLength();
+	float getSquaredLength();
+	Vector3 operator+(Vector3 &a);
+	Vector3 operator-(Vector3 &a);
+	Vector3 operator*(float s);
+	float x, y, z;
+};
+
+class Mesh 
+{
+public:
+	Mesh();
+
+	Material* GetMaterial();
+
+	void SetMaterialTexture( string textureName );
+	void SetMaterialColor( float, float, float, float );
+
+	void SetUVAnimation( int horizontalTileCount, int verticalTileCount );
+	
+	void CreateUVAnimationClip( string clipName, int startFrame, int endFrame, int mode );
+	void SetUVAnimationClip( string clipName );
+
+	void StartUVAnimation();
+	void StopUVAnimation();
+	void SetUVAnimationSpeed( float speed );
+	void SetUVAnimationTime( float time );
+}
+
+class Physics
+{
+	static void EnableCollisionLayers( string name, int index1, int index2 );
+}
